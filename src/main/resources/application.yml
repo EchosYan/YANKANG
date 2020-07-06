@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    database: MySQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+application:
+  jackson:
+    local_date_time-format: ${spring.jackson.date-format}
+    local_date-format: yyyy-MM-dd
+    local_time-format: HH:mm:ss
