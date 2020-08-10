@@ -1,9 +1,10 @@
 package me.iyk.project.model.entity;
 
 import lombok.Data;
+import me.iyk.project.common.base.BaseEntity;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Created on 2020/7/5.
@@ -13,12 +14,7 @@ import java.time.LocalDateTime;
 @Table(name = "user")
 @Entity
 @Data
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class User extends BaseEntity {
     private String username;
     private String password;
-    private LocalDateTime createTime;
-    private LocalDateTime updateTime;
 }
