@@ -17,3 +17,9 @@ application:
     local_date_time-format: ${spring.jackson.date-format}
     local_date-format: yyyy-MM-dd
     local_time-format: HH:mm:ss
+
+# health check info
+project-build-version-info:
+  version: @project.version@
+  buildTimestamp: @timestamp@
+  scmVersion: @buildNumber@
