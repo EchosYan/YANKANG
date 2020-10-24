@@ -16,7 +16,7 @@ import java.util.Date;
 /**
  * Health check
  *
- * @author Rizon
+ * @author Echos
  * @date 2020/09/18
  */
 @Slf4j
