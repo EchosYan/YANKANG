@@ -6,3 +6,12 @@ spring:
     username: root
   redis:
     host: DB-HOST
+
+http:
+  pool:
+    connectTimeout: 5000
+    connectionRequestTimeout: 5000
+    defaultMaxPerRoute: 20
+    maxTotal: 100
+    socketTimeout: 5000
+    validateAfterInactivity: 30000
