@@ -1,5 +1,7 @@
 package me.iyk.project.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +22,7 @@ import java.util.Date;
  * @date 2020/09/18
  */
 @Slf4j
+@Api(tags = "ServerHealthController", value = "后台用户管理")
 @RestController
 @RequestMapping("/health")
 @RequiredArgsConstructor
@@ -32,17 +35,19 @@ public class ServerHealthController {
      *
      * @return
      */
+    @ApiOperation(value = "ping")
     @GetMapping(value = "/ping")
     public Result<String> ping() {
         return R.ok("pong");
     }
 
-
+    @ApiOperation(value = "date")
     @GetMapping
-    public Result healthController() {
+    public Result date() {
         return R.ok(new Date());
     }
 
+    @ApiOperation(value = "version")
     @GetMapping("version")
     public Result<VersionInfo> buildVersion() {
         return R.ok(versionInfo);
