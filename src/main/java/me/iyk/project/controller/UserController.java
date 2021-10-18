@@ -3,6 +3,7 @@ package me.iyk.project.controller;
 import com.querydsl.core.types.Predicate;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
+import me.iyk.project.common.anotation.RateLimit;
 import me.iyk.project.common.dto.basic.page.Paging;
 import me.iyk.project.common.dto.basic.result.ListResult;
 import me.iyk.project.common.dto.basic.result.PageResult;
@@ -38,6 +39,7 @@ public class UserController {
     private final UserRepository userRepository;
     private final JPAQueryFactory jpaQueryFactory;
 
+    @RateLimit(key = "userGetRateLimit", period = 100, count = 10)
     @GetMapping("/{id}")
     public Result<UserVO> get(@PathVariable("id") Long id) {
         return R.ok(userConvert.to(userRepository.getOne(id)));

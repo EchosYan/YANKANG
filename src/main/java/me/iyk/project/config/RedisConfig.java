@@ -20,6 +20,7 @@ import java.time.Duration;
 
 @Configuration
 public class RedisConfig {
+
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisSerializer<Object> serializer = redisSerializer();

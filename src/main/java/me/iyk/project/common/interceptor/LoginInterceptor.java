@@ -1,4 +1,4 @@
-package me.iyk.project.config.interceptor;
+package me.iyk.project.common.interceptor;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Slf4j
 public class LoginInterceptor implements HandlerInterceptor {
-    private static final String HEADER_TOKEN_KEY = "EXP-TOKEN";
+    private static final String HEADER_TOKEN_KEY = "X-AUTH-TOKEN";
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
