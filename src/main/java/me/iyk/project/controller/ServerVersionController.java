@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
-
 /**
  * Health check
  *
@@ -22,37 +20,18 @@ import java.util.Date;
  * @date 2020/09/18
  */
 @Slf4j
-@Api(tags = "ServerHealthController", value = "后台用户管理")
+@Api(tags = "ServerVersionController", value = "系统版本查询")
 @RestController
-@RequestMapping("/health")
+@RequestMapping("/sys")
 @RequiredArgsConstructor
-public class ServerHealthController {
+public class ServerVersionController {
     private final VersionInfo versionInfo;
-
-
-    /**
-     * 服务心跳检测接口
-     *
-     * @return
-     */
-    @ApiOperation(value = "ping")
-    @GetMapping(value = "/ping")
-    public Result<String> ping() {
-        return R.ok("pong");
-    }
-
-    @ApiOperation(value = "date")
-    @GetMapping
-    public Result date() {
-        return R.ok(new Date());
-    }
 
     @ApiOperation(value = "version")
     @GetMapping("version")
     public Result<VersionInfo> buildVersion() {
         return R.ok(versionInfo);
     }
-
 
     @Data
     @Component
