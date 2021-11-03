@@ -23,3 +23,6 @@ project-build-version-info:
   version: @project.version@
   buildTimestamp: @timestamp@
   scmVersion: @buildNumber@
+
+server:
+  shutdown: graceful
