@@ -42,7 +42,7 @@ public class UserController {
     @RateLimit(key = "userGetRateLimit", period = 100, count = 10)
     @GetMapping("/{id}")
     public Result<UserVO> get(@PathVariable("id") Long id) {
-        return R.ok(userConvert.to(userRepository.getOne(id)));
+        return R.ok(userConvert.to(userRepository.getById(id)));
     }
 
     @GetMapping("list")
