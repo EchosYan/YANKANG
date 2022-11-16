@@ -27,9 +27,15 @@ project-build-version-info:
 server:
   shutdown: graceful
 
+
 logging:
   level:
     root: info
     controller.*: debug
     service.*: debug
   config: classpath:log4j2-spring.xml
+
+management:
+  endpoint:
+    metrics:
+      enabled: true
